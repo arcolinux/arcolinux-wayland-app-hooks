@@ -1,0 +1,1 @@
+# ArcoLinux-wayland-apps-hooks
