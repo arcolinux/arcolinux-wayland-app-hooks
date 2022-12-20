@@ -27,7 +27,7 @@
 ##################################################################################################################
 
 if [ -f /usr/share/applications/org.flameshot.Flameshot.desktop ]; then
-	FIND="Exec=/usr/bin/flameshot"
-	REPLACE="Exec=env XDG_CURRENT_DESKTOP=sway /usr/bin/flameshot"
+	FIND="Exec=\/usr\/bin\/flameshot"
+	REPLACE="Exec=env XDG_CURRENT_DESKTOP=sway \/usr\/bin\/flameshot"
 	sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/org.flameshot.Flameshot.desktop
 fi
