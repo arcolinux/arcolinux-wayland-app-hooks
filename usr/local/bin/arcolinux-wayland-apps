@@ -26,8 +26,22 @@
 #tput setaf 8 = light blue
 ##################################################################################################################
 
-if [ -f /usr/share/applications/org.flameshot.Flameshot.desktop ]; then
-	FIND="Exec=\/usr\/bin\/flameshot"
-	REPLACE="Exec=env XDG_CURRENT_DESKTOP=sway \/usr\/bin\/flameshot"
-	sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/org.flameshot.Flameshot.desktop
+if [ -f /usr/share/wayland-sessions/hyprland.desktop ]; then
+	echo
+	tput setaf 2
+	echo "################################################################"
+	echo "################### We are on hyprland"
+	echo "################################################################"
+	tput sgr0
+	echo
+	
+	echo
+	echo "Changing flameshot"
+	echo
+	if [ -f /usr/share/applications/org.flameshot.Flameshot.desktop ]; then
+		FIND="Exec=\/usr\/bin\/flameshot"
+		REPLACE="Exec=env XDG_CURRENT_DESKTOP=sway \/usr\/bin\/flameshot"
+		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/org.flameshot.Flameshot.desktop
+	fi
+
 fi
