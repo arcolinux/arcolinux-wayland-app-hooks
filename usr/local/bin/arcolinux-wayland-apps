@@ -31,7 +31,8 @@ if [ -f /usr/share/wayland-sessions/hyprland.desktop ]; then
 	tput setaf 2
 	echo "################################################################"
 	echo "################### We are on hyprland"
-	echo "################### Submit packages to change"
+	echo "################### Submit packages to change on Wayland"
+	echo "################### We did not change anything"	
 	echo "################################################################"
 	tput sgr0
 	echo

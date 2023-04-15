@@ -2,6 +2,8 @@
 Operation = Install
 Operation = Upgrade
 Type = Package
+Target = flameshot
+Target = flameshot-git
 
 [Action]
 Description = Pacman hook for wayland desktop files
