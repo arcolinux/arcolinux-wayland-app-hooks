@@ -37,13 +37,13 @@ if [ -f /usr/share/wayland-sessions/hyprland.desktop ]; then
 	tput sgr0
 	echo
 	
-	# echo
-	# echo "Changing flameshot"
-	# echo
-	# if [ -f /usr/share/applications/org.flameshot.Flameshot.desktop ]; then
-	# 	FIND="Exec=\/usr\/bin\/flameshot"
-	# 	REPLACE="Exec=env XDG_CURRENT_DESKTOP=sway \/usr\/bin\/flameshot"
-	# 	sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/org.flameshot.Flameshot.desktop
-	# fi
+	echo
+	echo "Changing flameshot"
+	echo
+	if [ -f /usr/share/applications/org.flameshot.Flameshot.desktop ]; then
+		FIND="Exec=\/usr\/bin\/flameshot"
+		REPLACE="Exec=/usr/bin/env GDK_BACKEND=x11 \/usr\/bin\/flameshot"
+		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/org.flameshot.Flameshot.desktop
+	fi
 
 fi
