@@ -45,4 +45,23 @@ if [ -f /usr/share/wayland-sessions/hyprland.desktop ]; then
 	#	sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/org.flameshot.Flameshot.desktop
 	#fi
 
+	echo
+	echo "We are changing octopi by way of test"
+	echo
+	if [ -f /usr/share/applications/octopi.desktop ]; then
+		FIND="Exec=\/usr\/bin\/octopi"
+		REPLACE="Exec=\/usr\/bin\/env GDK_BACKEND=x11 \/usr\/bin\/octopi"
+		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/octopi.desktop
+	fi
+	if [ -f /usr/share/applications/octopi-cachecleaner.desktop ]; then
+		FIND="Exec=\/usr\/bin\/octopi-cachecleaner"
+		REPLACE="Exec=\/usr\/bin\/env GDK_BACKEND=x11 \/usr\/bin\/octopi-cachecleaner"
+		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/octopi-cachecleaner.desktop
+	fi
+	if [ -f /usr/share/applications/octopi-notifier.desktop ]; then
+		FIND="Exec=\/usr\/bin\/octopi-notifier"
+		REPLACE="Exec=\/usr\/bin\/env GDK_BACKEND=x11 \/usr\/bin\/octopi-notifier"
+		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/octopi-notifier.desktop
+	fi
+
 fi
