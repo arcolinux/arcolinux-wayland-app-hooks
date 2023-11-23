@@ -5,7 +5,7 @@ Type = Package
 Target = flameshot
 Target = flameshot-git
 Target = edu-flameshot-git
-Tartet = octopi
+Target = octopi
 
 [Action]
 Description = Pacman hook for wayland desktop files
