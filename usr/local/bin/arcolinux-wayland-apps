@@ -25,44 +25,53 @@
 #tput setaf 7 = gray 
 #tput setaf 8 = light blue
 ##################################################################################################################
+hyprland="/usr/share/wayland-sessions/hyprland.desktop"
+wayfire="/usr/share/wayland-sessions/hyprland.desktop"
+sway="/usr/share/wayland-sessions/hyprland.desktop"
 
-if [ -f /usr/share/wayland-sessions/hyprland.desktop ]; then
+
+if [ -f $hyrpland || -f $wayfire || -f $sway ]; then
 	echo
 	tput setaf 2
 	echo "################################################################"
-	echo "################### We are on hyprland"
-	echo "################### Submit packages to change automatically on Wayland"
+	echo "########  We are on wayland"
+	echo "########  Submit packages to change automatically on Wayland"
 	echo "################################################################"
 	tput sgr0
 	echo
 	
-	#echo
-	#echo "We are not changing flameshot by way of test"
-	#echo
-	#if [ -f /usr/share/applications/org.flameshot.Flameshot.desktop ]; then
-	#	FIND="Exec=\/usr\/bin\/flameshot"
-	#	REPLACE="Exec=\/usr\/bin\/env GDK_BACKEND=x11 \/usr\/bin\/flameshot"
-	#	sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/org.flameshot.Flameshot.desktop
-	#fi
-
 	echo
-	echo "We are changing octopi by way of test"
 	echo "Adding GDK_BACKEND=x11 to the .desktop files"
 	echo
 	if [ -f /usr/share/applications/octopi.desktop ]; then
 		FIND="Exec=\/usr\/bin\/octopi"
 		REPLACE="Exec=\/usr\/bin\/env GDK_BACKEND=x11 \/usr\/bin\/octopi"
+		echo "Changing /usr/share/applications/octopi.desktop"
 		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/octopi.desktop
 	fi
 	if [ -f /usr/share/applications/octopi-cachecleaner.desktop ]; then
 		FIND="Exec=\/usr\/bin\/octopi-cachecleaner"
 		REPLACE="Exec=\/usr\/bin\/env GDK_BACKEND=x11 \/usr\/bin\/octopi-cachecleaner"
+		echo "Changing /usr/share/applications/octopi-cachecleaner.desktop"
 		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/octopi-cachecleaner.desktop
 	fi
 	if [ -f /usr/share/applications/octopi-notifier.desktop ]; then
 		FIND="Exec=\/usr\/bin\/octopi-notifier"
 		REPLACE="Exec=\/usr\/bin\/env GDK_BACKEND=x11 \/usr\/bin\/octopi-notifier"
+		echo "Changing /usr/share/applications/octopi-notifier.desktop"
 		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/octopi-notifier.desktop
 	fi
+
+	echo
+	echo "Adding QT_QPA_PLATFORM=xcb to the .desktop files"
+	echo
+
+	if [ -f /usr/share/applications/gitahead.desktop ]; then
+		FIND="Exec=gitahead"
+		REPLACE="Exec=\/usr\/bin\/env QT_QPA_PLATFORM=xcb gitahead"
+		echo "Changing /usr/share/applications/gitahead.desktop"
+		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/gitahead.desktop
+	fi
+
 
 fi
