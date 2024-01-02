@@ -26,11 +26,11 @@
 #tput setaf 8 = light blue
 ##################################################################################################################
 hyprland="/usr/share/wayland-sessions/hyprland.desktop"
-wayfire="/usr/share/wayland-sessions/hyprland.desktop"
-sway="/usr/share/wayland-sessions/hyprland.desktop"
+wayfire="/usr/share/wayland-sessions/wayfire.desktop"
+sway="/usr/share/wayland-sessions/sway.desktop"
 
 
-if [ -f $hyrpland || -f $wayfire || -f $sway ]; then
+if [[ -f $hyprland || -f $wayfire || -f $sway ]]; then
 	echo
 	tput setaf 2
 	echo "################################################################"
