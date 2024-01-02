@@ -6,6 +6,9 @@ Target = flameshot
 Target = flameshot-git
 Target = edu-flameshot-git
 Target = octopi
+Target = gitahead
+Target = gitahead-bin
+Target = gitahead-git
 
 [Action]
 Description = Pacman hook for wayland desktop files
