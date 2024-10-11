@@ -9,6 +9,8 @@ Target = octopi
 Target = gitahead
 Target = gitahead-bin
 Target = gitahead-git
+Target = gittyup
+Target = gittyup-git
 
 [Action]
 Description = Pacman hook for wayland desktop files
