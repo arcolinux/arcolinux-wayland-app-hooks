@@ -73,5 +73,11 @@ if [[ -f $hyprland || -f $wayfire || -f $sway ]]; then
 		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/gitahead.desktop
 	fi
 
+	if [ -f /usr/share/applications/com.github.Murmele.Gittyup.desktop ]; then
+		FIND="Exec=gittyup"
+		REPLACE="Exec=\/usr\/bin\/env QT_QPA_PLATFORM=xcb gittyup"
+		echo "Changing /usr/share/applications/com.github.Murmele.Gittyup.desktop"
+		sudo sed -i "s/$FIND/$REPLACE/g" /usr/share/applications/com.github.Murmele.Gittyup.desktop
+	fi
 
 fi
