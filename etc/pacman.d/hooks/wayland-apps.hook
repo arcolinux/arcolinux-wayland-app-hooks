@@ -2,9 +2,6 @@
 Operation = Install
 Operation = Upgrade
 Type = Package
-Target = flameshot
-Target = flameshot-git
-Target = edu-flameshot-git
 Target = octopi
 Target = gitahead
 Target = gitahead-bin
